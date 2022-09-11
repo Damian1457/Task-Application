@@ -1,8 +1,10 @@
 package com.crud.tasks.service;
 
+import com.crud.tasks.comtroller.TaskNotFoundException;
 import com.crud.tasks.domain.Task;
 import com.crud.tasks.repository.TaskRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,14 +14,22 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class DbService {
 
-    private final TaskRepository taskRepository;
+    @Autowired
+    private TaskRepository repository;
 
     public List<Task> getAllTasks() {
-        return taskRepository.findAll();
+        return repository.findAll();
     }
 
-    public Optional<Task> findById(final Long id) {
-        return taskRepository.findById(id);
+    public Task saveTask(final Task task) {
+        return repository.save(task);
     }
 
+    public void deleteTask(final Long id) {
+        repository.findById(id);
+    }
+
+    public Task getTask(final Long id) throws TaskNotFoundException {
+        return repository.findById(id).orElseThrow(TaskNotFoundException::new);
+    }
 }
