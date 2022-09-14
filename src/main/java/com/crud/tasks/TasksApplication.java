@@ -25,5 +25,3 @@ public class TasksApplication {
 // 3. Tomcat,
 // 4. Widok w aplikacji, nie wyświetla się jedna część,
 // 5. Nie mogę wysłać kodu na githuba,
-// 6. Nie działa mi strona aplikacji,
-//7. Heroku.
