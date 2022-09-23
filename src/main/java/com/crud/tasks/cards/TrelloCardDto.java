@@ -1,7 +1,11 @@
 package com.crud.tasks.cards;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 
+@Getter
+@AllArgsConstructor
 @Data
 public class TrelloCardDto {
 
