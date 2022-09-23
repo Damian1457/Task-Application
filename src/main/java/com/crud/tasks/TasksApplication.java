@@ -20,8 +20,5 @@ public class TasksApplication {
 
 }
 
-// 1. Postman,
-// 2. Metoda Delete w zadaniu - aplikacja,
-// 3. Tomcat,
-// 4. Widok w aplikacji, nie wyświetla się jedna część,
+
 
