@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
 @CrossOrigin("*")
 @RestController
 @RequestMapping("/v1/tasks")
@@ -22,20 +23,20 @@ public class TaskController {
     private final TaskMapper taskMapper;
 
     @GetMapping
-    public ResponseEntity <List<TaskDto>> getTasks() {
+    public ResponseEntity<List<TaskDto>> getTasks() {
         List<Task> tasks = service.getAllTasks();
         return ResponseEntity.ok(taskMapper.mapToTaskDtoList(tasks));
     }
 
-    @GetMapping(value = "{taskId}")
+    @GetMapping("/{taskId}")
     public ResponseEntity<TaskDto> getTask(@PathVariable Long taskId) throws TaskNotFoundException {
-            return ResponseEntity.ok(taskMapper.mapToTaskDto(service.getTask(taskId)));
+        return  ResponseEntity.ok(taskMapper.mapToTaskDto(service.getTask(taskId)));
     }
 
-    @DeleteMapping(value = "{taskId}")
+    @DeleteMapping("/{taskId}")
     public ResponseEntity<Void> deleteTask(@PathVariable Long taskId) {
-       service.deleteTask(taskId);
-       return ResponseEntity.ok().build();
+        service.deleteTask(taskId);
+        return ResponseEntity.ok().build();
     }
 
     @PutMapping
@@ -51,5 +52,4 @@ public class TaskController {
         service.saveTask(task);
         return ResponseEntity.ok().build();
     }
-
 }
