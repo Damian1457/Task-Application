@@ -22,7 +22,7 @@ public class CoreConfiguration {
 
         return GroupedOpenApi.builder()
                 .group("tasks")
-                .pathsToMatch("/v1/tasks")
+                .pathsToMatch("/v1/tasks/**", "/v1/trello/**")
                 .build();
     }
 
