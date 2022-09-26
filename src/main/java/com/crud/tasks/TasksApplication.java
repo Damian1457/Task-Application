@@ -14,5 +14,9 @@ public class TasksApplication {
 	}
 }
 
+//1. Widok zrobić poprawnie.
+//2. Dokończyć zadanie.
+//3.
+
 
 
