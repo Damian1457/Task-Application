@@ -15,6 +15,8 @@ public class TasksApplication {
 }
 
 //1. Omówić cały projekt.
+//2. Zrobić metodę delete task.
+//3. Sprawdzić czy na Heroku aplikacja sama się dodaje.
 
 
 
