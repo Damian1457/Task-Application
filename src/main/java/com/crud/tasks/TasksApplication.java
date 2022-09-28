@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
-//public class TasksApplication extends SpringBootServletInitializer {
+
 
 @SpringBootApplication
 public class TasksApplication {
@@ -14,9 +14,7 @@ public class TasksApplication {
 	}
 }
 
-//1. Widok zrobić poprawnie.
-//2. Dokończyć zadanie.
-//3.
+//1. Omówić cały projekt.
 
 
 
