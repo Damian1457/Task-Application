@@ -1,49 +1,64 @@
-CREATE TABLE ISSUESLISTSS(
-  ID SERIAL PRIMARY KEY,
-  NAME VARCHAR(100)
+create table Issuelists
+(
+    ID serial primary key,
+    NAME varchar(100)
 );
 
-CREATE TABLE ISSUES(
-    ID SERIAL PRIMARY KEY,
-    ISSUESLISTSS_ID BIGINT UNSIGNED NOT NULL,
-    USER_ID BIGINT UNSIGNED NOT NULL,
-    SUMMARY VARCHAR(100),
-    DESCRIPTION VARCHAR(100),
-    FOREIGN KEY (USER_ID) REFERENCES ISSUESLISTSS(ID)
+create table Issues
+(
+  ID serial primary key,
+  ISSUELISTS_ID bigint unsigned not null,
+  SUMMARY varchar(1024),
+  DESCTIPTION varchar(1024),
+  USER_ID_ASSIGNEDTO bigint unsigned not null,
+  foreign key(USER_ID_ASSIGNEDTO) references USERS(ID)
 );
 
-INSERT INTO ISSUESLISTSS (ID, NAME)
-VALUES (1, 'ToDo');
+select * from Issues;
 
-INSERT INTO ISSUESLISTSS (ID, NAME)
-VALUES (2, 'In progress');
+insert into Issuelists (NAME)
+values ('ToDO');
 
-INSERT INTO ISSUESLISTSS (ID, NAME)
-VALUES (3, 'Done');
-COMMIT;
+insert into Issuelists (NAME)
+values ('In progress');
+
+insert into Issuelists (NAME)
+values ('Done');
+
+insert into Issues (ISSUELISTS_ID, USER_ID_ASSIGNEDTO, SUMMARY, DESCTIPTION)
+values (1, 1, 'School', 'Go to school');
+
+insert into Issues (ISSUELISTS_ID, USER_ID_ASSIGNEDTO, SUMMARY, DESCTIPTION)
+values (1, 1, 'School', 'Go to school');
+
+insert into Issues (ISSUELISTS_ID, USER_ID_ASSIGNEDTO,  SUMMARY, DESCTIPTION)
+values (1, 1, 'School', 'Go to school');
+
+insert into Issues (ISSUELISTS_ID, USER_ID_ASSIGNEDTO, SUMMARY, DESCTIPTION)
+values (2, 2,'Home', 'Go home');
+
+insert into Issues (ISSUELISTS_ID,USER_ID_ASSIGNEDTO, SUMMARY, DESCTIPTION)
+values (2, 2, 'Home', 'Go home');
+
+insert into Issues (ISSUELISTS_ID, USER_ID_ASSIGNEDTO, SUMMARY, DESCTIPTION)
+values (2, 2, 'Home', 'Go home');
+
+insert into Issues (ISSUELISTS_ID, USER_ID_ASSIGNEDTO, SUMMARY, DESCTIPTION)
+values (3, 2, 'Home', 'Go home');
+
+insert into Issues (ISSUELISTS_ID, USER_ID_ASSIGNEDTO, SUMMARY, DESCTIPTION)
+values (3, 2, 'Home', 'Go home');
+
+insert into Issues (ISSUELISTS_ID, USER_ID_ASSIGNEDTO, SUMMARY, DESCTIPTION)
+values (3, 3, 'Home', 'Go home');
+commit;
+
+select * from Issues;
+select * from Issuelists;
 
 
-INSERT INTO ISSUES (ISSUESLISTSS_ID, SUMMARY, DESCRIPTION)
-VALUES (1, 'School', 'Go to school');
-INSERT INTO ISSUES (ISSUESLISTSS_ID, SUMMARY, DESCRIPTION)
-VALUES (1, 'School', 'Go to school');
-INSERT INTO ISSUES (ISSUESLISTSS_ID, SUMMARY, DESCRIPTION)
-VALUES (1, 'School', 'Go to school');
 
-INSERT INTO ISSUES (ISSUESLISTSS_ID, SUMMARY, DESCRIPTION)
-VALUES (2, 'Home', 'Go to Home');
-INSERT INTO ISSUES (ISSUESLISTSS_ID, SUMMARY, DESCRIPTION)
-VALUES (2, 'Home', 'Go to Home');
-INSERT INTO ISSUES (ISSUESLISTSS_ID, SUMMARY, DESCRIPTION)
-VALUES (2, 'Home', 'Go to Home');
 
-INSERT INTO ISSUES (ISSUESLISTSS_ID, SUMMARY, DESCRIPTION)
-VALUES (3, 'Shop', 'Go to Shop');
-INSERT INTO ISSUES (ISSUESLISTSS_ID, SUMMARY, DESCRIPTION)
-VALUES (3, 'Shop', 'Go to Shop');
-INSERT INTO ISSUES (ISSUESLISTSS_ID, SUMMARY, DESCRIPTION)
-VALUES (3, 'Shop', 'Go to Shop');
-COMMIT;
 
-SELECT * FROM ISSUES;
-SELECT * FROM ISSUESLISTSS;
+
+
