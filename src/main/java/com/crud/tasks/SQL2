@@ -1,0 +1,14 @@
+1.
+select u.name, p.id
+from Issuelists u
+join Issues p on u.ID = p.ISSUELISTS_ID;
+
+2.
+select p.id, u.FIRSTNAME, p.DESCTIPTION, p.SUMMARY
+from USERS u
+join Issues p on u.ID = p.id;
+
+3.
+select u.firstname, u.lastname, i.DESCTIPTION, i.USER_ID_ASSIGNEDTO
+from users u
+join Issues i on u.ID = i.USER_ID_ASSIGNEDTO;
